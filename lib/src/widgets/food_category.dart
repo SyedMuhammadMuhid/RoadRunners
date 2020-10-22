@@ -15,7 +15,6 @@ class FoodCategory extends StatelessWidget {
     height: 80,
         child:
       ListView.builder(
-
       itemCount: _categories.length,
       scrollDirection: Axis.horizontal,
       itemBuilder: (BuildContext context, int index){

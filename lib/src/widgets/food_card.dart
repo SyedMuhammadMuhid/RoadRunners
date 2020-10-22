@@ -12,23 +12,26 @@ int numberOfItems;
     return Container(
 
       width: 190,
-      child: Card(
-        color: Colors.orange[50],
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Row(
-            children: <Widget>[
-              Image(image: AssetImage(categoryImagePath),
-                height: 65,
-                width: 65,),
-              SizedBox(width: 7,),
-              Column(children: <Widget>[
-                Text(categoryName, style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
-                Text('$numberOfItems Kinds'),
-              ],)
+      child: Material(
+        elevation: 5,
+        child: Card(
+          color: Colors.orange[50],
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Row(
+              children: <Widget>[
+                Image(image: AssetImage(categoryImagePath),
+                  height: 65,
+                  width: 65,),
+                SizedBox(width: 7,),
+                Column(children: <Widget>[
+                  Text(categoryName, style: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),),
+                  Text('$numberOfItems Kinds'),
+                ],)
 
 
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:roadrunners/src/models/Category_model.dart';
+import 'package:roadrunners/src/models/Frequent_food_model.dart';
 
 final categories=[
   CategoryModel( categoryName: 'Burgers', categoryImagePath:'assets/burger.png', numberOfItems: 43),
@@ -10,5 +11,13 @@ final categories=[
   CategoryModel(categoryName: 'Sweets', categoryImagePath:'assets/cupcake.png', numberOfItems: 9)
 
 
+
+];
+final frequently_bought_food_data=[
+  FrequentFoodModel(foodName: 'Hot Coffee', categoryImagePath: 'assets/breakfast.jpeg', money: 7, moneyLevel:'💸 💸', location: 'La Cafe, Spain', rating: 4.5),
+  FrequentFoodModel(foodName: 'Chicken Steak', categoryImagePath: 'assets/lunch.jpeg', money: 25, moneyLevel:'💸 💸 💸', location: 'La Luna, Spain', rating: 4.5),
+  FrequentFoodModel(foodName: 'Cheese Pizza', categoryImagePath: 'assets/pizza_bg.jpg', money: 9, moneyLevel:'💸 💸', location: 'La Fieasta, Spain', rating: 4.5),
+  FrequentFoodModel(foodName: 'Muffin coco', categoryImagePath: 'assets/muffins.jpg', money: 3, moneyLevel:'💸 ', location: 'Sweet Shop, Spain', rating: 4.5),
+  FrequentFoodModel(foodName: 'Filled Donuts', categoryImagePath: 'assets/donuts.jpg', money: 4, moneyLevel:'💸 ', location: 'Dounkin Donuts, Spain', rating: 4.5)
 
 ];

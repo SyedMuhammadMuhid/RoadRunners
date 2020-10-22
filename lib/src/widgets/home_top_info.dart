@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roadrunners/src/widgets/search_field.dart';
 
 class HomeTopInfo extends StatelessWidget {
   @override
@@ -23,7 +24,16 @@ class HomeTopInfo extends StatelessWidget {
               width: 160,
             ),
           ],),
-        Icon(Icons.notifications, color: Theme.of(context).primaryColor ,size: 40,),
+        SizedBox(height: 8,),
+        Row(
+          children:<Widget> [
+            Icon(Icons.notifications, color: Theme.of(context).primaryColor ,size: 40,),
+            SizedBox(width: 20,),
+           Container(height: 33, width: 330, child: SearchField()),
+
+
+          ],
+        ),
       ],
     ));
   }
