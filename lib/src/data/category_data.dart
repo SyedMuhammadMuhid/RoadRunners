@@ -21,3 +21,11 @@ final frequently_bought_food_data=[
   FrequentFoodModel(foodName: 'Filled Donuts', categoryImagePath: 'assets/donuts.jpg', money: 4, moneyLevel:'💸 ', location: 'Dounkin Donuts, Spain', rating: 4.5)
 
 ];
+final notifications_data=[
+  'Use #Fastest to get 10% discount',
+  'Dude, What are you waiting for !!',
+  'Food on it way',
+  'New Pizza Deals available',
+  'Hello, Buy food now 😊'
+
+];

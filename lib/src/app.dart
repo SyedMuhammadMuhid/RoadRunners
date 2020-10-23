@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'file:///C:/Users/hp/AndroidStudioProjects/roadrunners/lib/src/widgets/home.dart';
+import 'package:roadrunners/src/widgets/nav_bar.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.deepOrange,),
 
-      home: Home(),
+      home: NavBar(),
     );
   }
 }
