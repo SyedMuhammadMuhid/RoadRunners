@@ -13,6 +13,8 @@ class BottomSheetPage extends StatefulWidget {
 class _BottomSheetPageState extends State<BottomSheetPage> {
   @override
   Widget build(BuildContext context) {
+    ScrollController controller = new ScrollController();
+
     return Scaffold(
       backgroundColor: Colors.deepOrange,
       body:  Container(
@@ -22,11 +24,14 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
         ClipRRect(
           borderRadius: BorderRadius.only(topLeft: Radius.circular(30), topRight: Radius.circular(30)),
           child: ListView.builder(
-            
+            controller: controller,
+            reverse: true,
             itemCount: notifications_data.length,
             scrollDirection: Axis.vertical,
-            itemBuilder: (BuildContext context, int index){
+            itemBuilder: (BuildContext context, int index,){
+              //if(index>0){controller.animateTo(controller.position.maxScrollExtent);}
               return NotiCard(notification: notifications_data[index]);
+
             },
           ),
         ))

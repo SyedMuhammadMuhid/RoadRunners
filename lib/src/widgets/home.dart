@@ -20,36 +20,38 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     double height= MediaQuery.of(context).size.height/10;
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: ListView(
-        padding: EdgeInsets.fromLTRB(10,25,0,0),
-        children: <Widget>[
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: ListView(
+          padding: EdgeInsets.fromLTRB(10,25,0,0),
+          children: <Widget>[
 
-          HomeTopInfo(),
-          Container(
-              height: height,child: FoodCategory()),
-          SizedBox(height: 10,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-            Text('Frequently Bought Food Items', style: TextStyle( color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),),
-            GestureDetector(onTap: (){},
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0,3,0,0),
-                  child: Text('View all', style: TextStyle( color: Theme.of(context).primaryColor, fontSize: 18,), ),
-                )),
-          ],),
-           SizedBox(height: 10,),
-                 Container(
-                   child: FrequentlyBoughtFoods(),
-                 ),
-
-
-    ]),
+            HomeTopInfo(),
+            Container(
+                height: height,child: FoodCategory()),
+            SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+              Text('Frequently Bought Food Items', style: TextStyle( color: Colors.black, fontSize: 22, fontWeight: FontWeight.bold),),
+              GestureDetector(onTap: (){},
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0,3,0,0),
+                    child: Text('View all', style: TextStyle( color: Theme.of(context).primaryColor, fontSize: 18,), ),
+                  )),
+            ],),
+             SizedBox(height: 10,),
+                   Container(
+                     child: FrequentlyBoughtFoods(),
+                   ),
 
 
+      ]),
 
+
+
+      ),
     );
   }
 }

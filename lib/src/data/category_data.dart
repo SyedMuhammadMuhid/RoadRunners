@@ -26,6 +26,7 @@ final notifications_data=[
   'Dude, What are you waiting for !!',
   'Food on it way',
   'New Pizza Deals available',
-  'Hello, Buy food now 😊'
+  'Hello, Buy food now 😊',
+  'You just ordered, right?'
 
 ];
