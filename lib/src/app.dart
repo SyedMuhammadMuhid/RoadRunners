@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           child: SplashScreen(
               seconds: 3,
             backgroundColor: Colors.white,
-            image: Image.asset('assets/applogo3.png'),
+            image: Image.asset('assets/applogo4.png'),
               loaderColor: Colors.white,
             photoSize: 140,
             navigateAfterSeconds: NavBar(),

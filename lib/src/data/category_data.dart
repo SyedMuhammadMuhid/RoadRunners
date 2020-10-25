@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:roadrunners/src/models/Category_model.dart';
 import 'package:roadrunners/src/models/Frequent_food_model.dart';
+import 'package:roadrunners/src/models/cart_model.dart';
 
 final categories=[
   CategoryModel( categoryName: 'Burgers', categoryImagePath:'assets/burger.png', numberOfItems: 43),
@@ -28,5 +29,12 @@ final notifications_data=[
   'New Pizza Deals available',
   'Hello, Buy food now 😊',
   'You just ordered, right?'
+
+];
+
+final cart_data=[
+  CartModel(foodName: 'Hot Coffee', foodImagePath: 'assets/breakfast.jpeg', numberOfItems: 2, location: 'La Cafe, Spain', price:  7),
+  CartModel(foodName: 'Filled Donuts', foodImagePath: 'assets/donuts.jpg', numberOfItems: 6, location: 'Dounkin Donuts, Spain', price:  4),
+  CartModel(foodName: 'Muffin coco', foodImagePath: 'assets/muffins.jpg', numberOfItems: 3, location: 'Sweet Shop, Spain', price:  3),
 
 ];
