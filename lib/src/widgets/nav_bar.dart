@@ -16,7 +16,7 @@ class _NavBarState extends State<NavBar> {
     super.initState();
   }
 
-  List <Widget> CurrentScreen=[CartScreen(),Home(), ProfileScreen() ];
+  List <Widget> CurrentScreen=[CartScreen(),Home(), ProfileScreen(),];
 
   /*final CurvedNavigationBarState navBarState =
         _bottomNavigationKey.currentState;

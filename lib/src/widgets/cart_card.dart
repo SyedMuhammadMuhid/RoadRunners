@@ -85,6 +85,8 @@ class _CartCardState extends State<CartCard> {
                 icon: Icon(Icons.delete, color: Colors.red,),
                 onPressed: (){},
               ),
+
+
             ],
           )
         ],
