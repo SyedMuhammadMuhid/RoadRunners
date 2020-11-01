@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roadrunners/src/screens/sign_in.dart';
 
 void proceed_popup( BuildContext context)
 {
@@ -21,7 +22,7 @@ void proceed_popup( BuildContext context)
                 FlatButton(
                   child: Text('Proceed', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 ),),
                   onPressed: (){
-
+                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> SignInScreen()));
                   },
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:roadrunners/src/constants/constants.dart';
 import 'package:roadrunners/src/data/category_data.dart';
 import 'package:roadrunners/src/popups/proceed_popup.dart';
 import 'package:roadrunners/src/widgets/cart_card.dart';
@@ -10,16 +11,18 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+
   @override
 
   Widget build(BuildContext context) {
+  double height = MediaQuery.of(context).size.height/6;
     return Scaffold(
       backgroundColor: Colors.deepOrange,
      body: ListView(
 
         children:[
           Container(
-            height: MediaQuery.of(context).size.height,
+            height:height*4.6,
             child: ListView.builder(
        physics: BouncingScrollPhysics(),
        itemCount:cart_data.length,
@@ -30,12 +33,15 @@ class _CartScreenState extends State<CartScreen> {
          price: cart_data[index].price,
          numberOfItems: cart_data[index].numberOfItems,
          location: cart_data[index].location);*/
+
          return CartCard2(foodImagePath: cart_data[index].foodImagePath,
              foodName: cart_data[index].foodName,
              price: cart_data[index].price,
              numberOfItems: cart_data[index].numberOfItems,
              location: cart_data[index].location);
-       },
+
+
+       }
      ),
           ),
 

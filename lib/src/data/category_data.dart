@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:roadrunners/src/models/Category_model.dart';
 import 'package:roadrunners/src/models/Frequent_food_model.dart';
 import 'package:roadrunners/src/models/cart_model.dart';
+import 'package:roadrunners/src/models/profile_model.dart';
+import 'package:roadrunners/src/subscreens/favourites.dart';
+import 'package:roadrunners/src/subscreens/payment_method.dart';
+import 'package:roadrunners/src/subscreens/personal_data.dart';
 
 final categories=[
   CategoryModel( categoryName: 'Burgers', categoryImagePath:'assets/burger.png', numberOfItems: 43),
@@ -37,4 +41,14 @@ final cart_data=[
   CartModel(foodName: 'Filled Donuts', foodImagePath: 'assets/donuts.jpg', numberOfItems: 6, location: 'Dounkin Donuts, Spain', price:  4),
   CartModel(foodName: 'Muffin coco', foodImagePath: 'assets/muffins.jpg', numberOfItems: 3, location: 'Sweet Shop, Spain', price:  3),
 
+];
+
+final profile_info_list=[
+  ProfileModel(dataName:'Personal Data', icon: Icon(Icons.data_usage, color: Colors.deepOrange,),screen: PersonalData()),
+  ProfileModel(dataName:'Favourites', icon: Icon(Icons.favorite, color: Colors.deepOrange,),screen: Favourites()),
+ProfileModel(dataName:'Order History', icon: Icon(Icons.history, color: Colors.deepOrange,)),
+ProfileModel(dataName:'Payment Records', icon: Icon(Icons.payment, color: Colors.deepOrange,)),
+ProfileModel(dataName:'Payment Methods', icon: Icon(Icons.whatshot, color: Colors.deepOrange,), screen: CardScreen()),
+ProfileModel(dataName:'Invite Friends', icon: Icon(Icons.send, color: Colors.deepOrange,)),
+ProfileModel(dataName:'Support', icon: Icon(Icons.help, color: Colors.deepOrange,)),
 ];

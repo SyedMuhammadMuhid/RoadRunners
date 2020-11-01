@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.white,
         body: Container(
           margin: EdgeInsets.only(top: 120),
-          padding: EdgeInsets.all(100),
+
           child: SplashScreen(
               seconds: 3,
             backgroundColor: Colors.white,
-            image: Image.asset('assets/applogo4.png'),
+            image: Image.asset('assets/applogo4.png', ),
               loaderColor: Colors.white,
-            photoSize: 140,
+            photoSize: MediaQuery.of(context).size.height/5,
             navigateAfterSeconds: NavBar(),
               ),
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:roadrunners/src/app.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(debugShowCheckedModeBanner: false,
+      home:MyApp()));
 }
 
