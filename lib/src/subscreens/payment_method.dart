@@ -13,6 +13,7 @@ class _CardScreenState extends State<CardScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.deepOrange),
           centerTitle: true,
           backgroundColor: Colors.white,
           elevation: 0,

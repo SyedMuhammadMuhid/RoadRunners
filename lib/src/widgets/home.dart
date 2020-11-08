@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
               GestureDetector(onTap: (){},
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0,3,0,0),
-                    child: Text('View all', style: TextStyle( color: Theme.of(context).primaryColor, fontSize: 18,), ),
+                    child: Text('View all', style: TextStyle( color: Colors.deepOrange, fontSize: 18,), ),
                   )),
             ],),
              SizedBox(height: 10,),

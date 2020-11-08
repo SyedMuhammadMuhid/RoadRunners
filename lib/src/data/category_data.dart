@@ -4,8 +4,12 @@ import 'package:roadrunners/src/models/Frequent_food_model.dart';
 import 'package:roadrunners/src/models/cart_model.dart';
 import 'package:roadrunners/src/models/profile_model.dart';
 import 'package:roadrunners/src/subscreens/favourites.dart';
+import 'package:roadrunners/src/subscreens/invite_friends.dart';
 import 'package:roadrunners/src/subscreens/payment_method.dart';
+import 'package:roadrunners/src/subscreens/payment_records.dart';
 import 'package:roadrunners/src/subscreens/personal_data.dart';
+import 'package:roadrunners/src/subscreens/order_history.dart';
+import 'package:roadrunners/src/subscreens/support.dart';
 
 final categories=[
   CategoryModel( categoryName: 'Burgers', categoryImagePath:'assets/burger.png', numberOfItems: 43),
@@ -46,9 +50,12 @@ final cart_data=[
 final profile_info_list=[
   ProfileModel(dataName:'Personal Data', icon: Icon(Icons.data_usage, color: Colors.deepOrange,),screen: PersonalData()),
   ProfileModel(dataName:'Favourites', icon: Icon(Icons.favorite, color: Colors.deepOrange,),screen: Favourites()),
-ProfileModel(dataName:'Order History', icon: Icon(Icons.history, color: Colors.deepOrange,)),
-ProfileModel(dataName:'Payment Records', icon: Icon(Icons.payment, color: Colors.deepOrange,)),
-ProfileModel(dataName:'Payment Methods', icon: Icon(Icons.whatshot, color: Colors.deepOrange,), screen: CardScreen()),
-ProfileModel(dataName:'Invite Friends', icon: Icon(Icons.send, color: Colors.deepOrange,)),
-ProfileModel(dataName:'Support', icon: Icon(Icons.help, color: Colors.deepOrange,)),
+ProfileModel(dataName:'Order History', icon: Icon(Icons.history, color: Colors.deepOrange,), screen: OrderHistory()),
+  ProfileModel(dataName:'Payment Methods', icon: Icon(Icons.whatshot, color: Colors.deepOrange,), screen: CardScreen()),
+  ProfileModel(dataName:'Change Password', icon: Icon(Icons.remove_red_eye, color: Colors.deepOrange,),screen: PaymentRecords()),
+ProfileModel(dataName:'Invite Friends', icon: Icon(Icons.send, color: Colors.deepOrange,),screen: InviteFriends()),
+ProfileModel(dataName:'Support', icon: Icon(Icons.help, color: Colors.deepOrange,),screen: Support()),
 ];
+
+int index_changer=1;
+bool proceeder= false;

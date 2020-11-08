@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:roadrunners/src/constants/constants.dart';
+import 'package:roadrunners/src/data/category_data.dart';
+import 'package:roadrunners/src/screens/cart.dart';
+import 'package:roadrunners/src/widgets/home.dart';
+import 'package:roadrunners/src/widgets/nav_bar.dart';
 
-class PersonalData extends StatefulWidget {
+class PersonalData_On_Signup extends StatefulWidget {
   @override
-  _PersonalDataState createState() => _PersonalDataState();
+  _PersonalData_On_SignupState createState() => _PersonalData_On_SignupState();
 }
 
-class _PersonalDataState extends State<PersonalData> {
+class _PersonalData_On_SignupState extends State<PersonalData_On_Signup> {
 
 
   String Name;
@@ -203,11 +207,10 @@ class _PersonalDataState extends State<PersonalData> {
             ),
           );
         }
-        else if(index==6){
-          return SingleChildScrollView(
-          child: Container(
-            color: Colors.amber[300],
-            padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+        else if(index==6){return Container(
+          color: Colors.amber[300],
+          padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+          child: Scrollbar(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Form(
@@ -311,14 +314,24 @@ class _PersonalDataState extends State<PersonalData> {
     //-------------------------------------------------------
 
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.deepOrange),
-        backgroundColor: Colors.white,
-        elevation: 0,
-      ),
       backgroundColor: Colors.white,
       body: ListView(
-        children:[ Padding(
+        children:[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: GestureDetector(
+                  onTap: (){
+                   index_changer=0;
+                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> NavBar()));
+
+                  },
+                  child: Icon(Icons.arrow_back, color: Colors.deepOrange,size: 30,)),
+            )
+          ],),
+          Padding(
           padding: const EdgeInsets.only(left: 16.0, right: 16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

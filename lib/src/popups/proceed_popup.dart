@@ -1,8 +1,14 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:roadrunners/src/loading/loading.dart';
 import 'package:roadrunners/src/screens/sign_in.dart';
+import 'package:roadrunners/src/subscreens/check_out.dart';
+import 'package:roadrunners/src/data/category_data.dart';
 
 void proceed_popup( BuildContext context)
 {
+  //final user= Provider.of<User>(context);
   showDialog(
       context: context,
       builder: (BuildContext context){
@@ -22,7 +28,19 @@ void proceed_popup( BuildContext context)
                 FlatButton(
                   child: Text('Proceed', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 ),),
                   onPressed: (){
-                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> SignInScreen()));
+                    proceeder=true;
+
+                   // if(user==null){
+                  //  Navigator.pop(context);
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context)=> LoadingScreen()));
+                    //  return SignInScreen();
+                   // }
+                   // else if(user!= null)
+                   //   {
+                        //Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> CheckOut()));
+                     //   return CheckOut();
+
+                      //}
                   },
                 ),
               ],

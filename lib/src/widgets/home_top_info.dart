@@ -42,9 +42,9 @@ class HomeTopInfo extends StatelessWidget {
               },
               );
             },
-                child: Icon(Icons.notifications, color: Theme.of(context).primaryColor ,size: 40,)),
+                child: Icon(Icons.notifications, color: Colors.deepOrange ,size: 40,)),
             SizedBox(width: 20,),
-           Container(height: 33, width: 330, child: SearchField()),
+           Container( height: 33, width: 330, child: SearchField()),
 
 
           ],

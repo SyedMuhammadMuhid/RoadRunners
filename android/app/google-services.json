@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "705632548443",
+    "firebase_url": "https://roadrunners-3c32d.firebaseio.com",
+    "project_id": "roadrunners-3c32d",
+    "storage_bucket": "roadrunners-3c32d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705632548443:android:483c0e9cf604459eb0717e",
+        "android_client_info": {
+          "package_name": "com.road.roadrunners"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705632548443-ja7qqh427msoj4u5s0pva59gr11lqf78.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-4RML_7BDPk6RinO3v7OxzTpngAuYijs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705632548443-ja7qqh427msoj4u5s0pva59gr11lqf78.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

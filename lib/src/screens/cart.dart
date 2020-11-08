@@ -1,8 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:roadrunners/src/constants/constants.dart';
 import 'package:roadrunners/src/data/category_data.dart';
 import 'package:roadrunners/src/popups/proceed_popup.dart';
+import 'package:roadrunners/src/screens/sign_in.dart';
+import 'package:roadrunners/src/subscreens/check_out.dart';
 import 'package:roadrunners/src/widgets/cart_card.dart';
 import 'package:roadrunners/src/widgets/cart_card_2.dart';
 class CartScreen extends StatefulWidget {
@@ -15,6 +19,8 @@ class _CartScreenState extends State<CartScreen> {
   @override
 
   Widget build(BuildContext context) {
+    final _user= Provider.of<User>(context);
+
   double height = MediaQuery.of(context).size.height/6;
     return Scaffold(
       backgroundColor: Colors.deepOrange,
@@ -22,7 +28,7 @@ class _CartScreenState extends State<CartScreen> {
 
         children:[
           Container(
-            height:height*4.6,
+            height:height*5.2,
             child: ListView.builder(
        physics: BouncingScrollPhysics(),
        itemCount:cart_data.length,
@@ -58,9 +64,18 @@ class _CartScreenState extends State<CartScreen> {
             child: RaisedButton(
               color: Colors.green,
               onPressed: (){
-                proceed_popup(context);
+               /* if(proceeder==false){
+                proceed_popup(context);}
+                 else if (proceeder==true && _user==null){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> SignInScreen()));
+                }
+                else if(proceeder==true && _user!= null){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> CheckOut()));
+                }*/
+               proceed_popup(context);
+
               },
-              child:Text('Proceed    ____ \$', style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),),
+              child:Text('Proceed to Checkout', style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),),
 
             ),
           ),

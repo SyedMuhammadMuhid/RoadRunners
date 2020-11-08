@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
 
 
     return MaterialApp(
+      color: Colors.deepOrange,
       debugShowCheckedModeBanner: false,
       title: "Fastest Food Delivery Application 💨",
       theme: ThemeData(

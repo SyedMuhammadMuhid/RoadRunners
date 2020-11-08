@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:roadrunners/src/data/category_data.dart';
+import 'package:roadrunners/src/services/authentication.dart';
 
 void logout_popup( BuildContext context)
 {
+  final Authentication _auth=Authentication();
   showDialog(
       context: context,
       builder: (BuildContext context){
@@ -20,8 +23,10 @@ void logout_popup( BuildContext context)
                 ),
                 FlatButton(
                   child: Text('Logout', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16 ),),
-                  onPressed: (){
-
+                  onPressed: ()async{
+                    await _auth.Sign_Out();
+                    proceeder=false;
+                    Navigator.pop(context);
                   },
                 ),
               ],

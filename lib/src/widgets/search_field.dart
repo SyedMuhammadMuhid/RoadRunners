@@ -13,7 +13,7 @@ class SearchField extends StatelessWidget {
           fillColor: Colors.white,
            suffixIcon: Material(elevation: 8,
                borderRadius: BorderRadius.circular(30),
-               child: Icon(Icons.search, size: 30,color: Theme.of(context).primaryColor,)),
+               child: Icon(Icons.search, size: 30,color: Colors.deepOrange,)),
           hintText: 'Search Any Food!!!',
           border: InputBorder.none
         ),
