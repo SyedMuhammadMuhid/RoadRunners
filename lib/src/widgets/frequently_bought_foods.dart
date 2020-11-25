@@ -20,7 +20,7 @@ class _FrequentlyBoughtFoodsState extends State<FrequentlyBoughtFoods> {
     double height= MediaQuery.of(context).size.height/10;
     print(_frequent_foods.length);
     return Container(
-      width: 100,
+
       //height: MediaQuery.of(context).size.height/1.9,
       height:height*5,
       child: ClipRRect(

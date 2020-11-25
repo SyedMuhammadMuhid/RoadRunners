@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 import 'package:roadrunners/src/constants/constants.dart';
 import 'package:roadrunners/src/screens/sign_in.dart';
+import 'package:roadrunners/src/services/authentication.dart';
 import 'package:roadrunners/src/subscreens/personal_data.dart';
 import 'package:roadrunners/src/subscreens/personal_data_for_signup.dart';
 
@@ -12,6 +16,8 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final _key = GlobalKey<FormState>();
+  final Authentication _auth = Authentication();
+
   String Email;
   String Pass;
   String Con_Pass;
@@ -19,9 +25,58 @@ class _RegisterPageState extends State<RegisterPage> {
   String UserName;
   bool obscureText1 = true;
   bool obscureText2 = true;
+  //-----------------
+  FToast fToast;
+
+  //-----------------------
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    fToast = FToast();
+    fToast.init(context);
+  }
 
   @override
   Widget build(BuildContext context) {
+    final _user=Provider.of<User>(context);
+
+    //---------------------------------toast function
+    void float_toast(String message) async {
+
+      Widget toast = Container(
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25.0),
+          color: Colors.redAccent,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              message,
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ],
+        ),
+      );
+
+      fToast.showToast(
+        child: toast,
+        gravity: ToastGravity.BOTTOM,
+        toastDuration: Duration(seconds: 2),
+        /* positionedToastBuilder: (context, child) {
+            return Positioned(
+              child: child,
+              top: MediaQuery.of(context).size.height-10,
+
+            );
+          }*/);
+    }
+
+    //________________________________
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -159,7 +214,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               obscureText: false,
                               onChanged: (val) {
                                 setState(() {
-                                  Pass = val;
+                                  Name = val;
                                 });
                               },
                               style: TextStyle(
@@ -186,7 +241,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               obscureText: false,
                               onChanged: (val) {
                                 setState(() {
-                                  Pass = val;
+                                  UserName = val;
                                 });
                               },
                               style: TextStyle(
@@ -214,13 +269,21 @@ class _RegisterPageState extends State<RegisterPage> {
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 18),
                               ),
-                              onPressed: () {
+                              onPressed: (){
                                 if (_key.currentState.validate()) {
-                                  setState(() {
-                                    Navigator.of(context).pushReplacement(
-                                        MaterialPageRoute(
-                                            builder: (BuildContext context) =>
-                                                PersonalData_On_Signup()));
+                                  setState(() async {
+                                    if(Pass==Con_Pass){
+                                   await _auth.SignUp(Email, Pass, Name, UserName);
+
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (BuildContext context) =>
+                                                    PersonalData_On_Signup()));
+                                      }
+
+                                    else if(Pass != Con_Pass){
+                                      float_toast("Passwords Don't Match");
+                                    }
                                   });
                                 }
                               }),

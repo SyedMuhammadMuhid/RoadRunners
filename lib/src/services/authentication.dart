@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:roadrunners/src/models/Personal_data_model.dart';
+import 'package:roadrunners/src/services/database.dart';
 
 class Authentication{
 
@@ -19,6 +21,31 @@ Future Sign_In()async{
    return null;
  }
 
+}
+
+Future SignInWithEmailPass(String Email, String Pass)async
+{
+  try{
+    UserCredential result= await _auth.signInWithEmailAndPassword(email: Email, password: Pass);
+    User user=result.user;
+    return user;
+
+  }catch(e){
+    return null;
+  }
+}
+
+Future SignUp(String Email, String Pass, String Name, String Username)async
+{
+  try{
+    UserCredential result= await _auth.createUserWithEmailAndPassword(email: Email, password: Pass);
+    User user= result.user;
+    await DataBase_Services(uid: user.uid).updatePersonalData(Personal_Data_Model(" ", Name, Username, "Update Email","Update Contact", "Update Address", "**** **** **** ****"," ","MM","YY"," "));
+    return user;
+
+  }catch(e){
+   return null;
+  }
 }
 
 Future Sign_Out() async{

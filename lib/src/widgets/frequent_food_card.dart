@@ -15,31 +15,32 @@ class FrequentFoodCard extends StatelessWidget {
   FrequentFoodCard({this.foodName, this.categoryImagePath, this.money, this.moneyLevel, this.location,this.rating});
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return
+      Container(
       height: 300,
-      width: 390,
+      width: MediaQuery.of(context).size.width,
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(35.0),
+          borderRadius: BorderRadius.all(Radius.circular(35)),
         ),
         child: Stack(children:<Widget>[
           Container(
               height: 300,
-              width: 390,
+              width: MediaQuery.of(context).size.width,
                   decoration:BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
+                      borderRadius: BorderRadius.all(Radius.circular(35)),
                   image:DecorationImage(
                     image: AssetImage(categoryImagePath),
-                    fit: BoxFit. fill,)
+                    fit: BoxFit.cover,)
               ) ),
           Positioned(
             left: 0.0,
             bottom: 0.0,
             child: Container(
               height: 100,
-              width: 390,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.all(Radius.circular(35)),
                   gradient: LinearGradient(
                     colors: [
                       Colors.black.withOpacity(0.9),Colors.black87.withOpacity(0.1)
